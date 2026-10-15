@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Un Portale, Molte Decisioni â Laboratorio AI Act nella PA</title>
+<title>Un Portale, Molte Decisioni — Laboratorio AI Act nella PA</title>
 <meta name="description" content="Simulazione didattica interattiva sull'AI Act nella Pubblica Amministrazione: cinque proposte di intelligenza artificiale sul portale del Comune di Borgonuovo." />
 <script src="https://cdn.tailwindcss.com"></script>
 <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
@@ -14,7 +14,6 @@
 <div id="root"></div>
 <script type="text/babel" data-presets="react">
 const { useState, useEffect } = React;
-import React, { useState, useEffect } from "react";
 
 // ============================================================
 // UN PORTALE, MOLTE DECISIONI
@@ -34,11 +33,11 @@ const SLATE = "#64748B";
 
 // ---------------- Categorie (etichette didattiche) ----------------
 const CATEGORIES = [
-  { id: "rosso", nome: "ROSSO Ã¢ÂÂ POSSIBILE PRATICA VIETATA", breve: "ROSSO", motto: "STOP: potrebbe essere un utilizzo vietato.", colore: RED },
-  { id: "arancione", nome: "ARANCIONE Ã¢ÂÂ POSSIBILE ALTO RISCHIO", breve: "ARANCIONE", motto: "Servono verifiche e requisiti specifici.", colore: ORANGE },
-  { id: "blu", nome: "BLU Ã¢ÂÂ TRASPARENZA", breve: "BLU", motto: "Occorre verificare gli obblighi di informazione.", colore: BLUE },
-  { id: "verde", nome: "VERDE Ã¢ÂÂ USO ORDINARIO", breve: "VERDE", motto: "Non emergono specifici obblighi di alto rischio per questa funzione.", colore: GREEN },
-  { id: "grigio", nome: "GRIGIO Ã¢ÂÂ INFORMAZIONI INSUFFICIENTI", breve: "GRIGIO", motto: "Serve capire meglio cosa fa il sistema.", colore: SLATE },
+  { id: "rosso", nome: "ROSSO — POSSIBILE PRATICA VIETATA", breve: "ROSSO", motto: "STOP: potrebbe essere un utilizzo vietato.", colore: RED },
+  { id: "arancione", nome: "ARANCIONE — POSSIBILE ALTO RISCHIO", breve: "ARANCIONE", motto: "Servono verifiche e requisiti specifici.", colore: ORANGE },
+  { id: "blu", nome: "BLU — TRASPARENZA", breve: "BLU", motto: "Occorre verificare gli obblighi di informazione.", colore: BLUE },
+  { id: "verde", nome: "VERDE — USO ORDINARIO", breve: "VERDE", motto: "Non emergono specifici obblighi di alto rischio per questa funzione.", colore: GREEN },
+  { id: "grigio", nome: "GRIGIO — INFORMAZIONI INSUFFICIENTI", breve: "GRIGIO", motto: "Serve capire meglio cosa fa il sistema.", colore: SLATE },
 ];
 
 const catById = (id) => CATEGORIES.find((c) => c.id === id);
@@ -51,7 +50,7 @@ const CASES = [
     title: "LO SPORTELLO CHE RISPONDE",
     scenario: [
       "Il Comune introduce un chatbot sul proprio sito.",
-      "Il cittadino puÃÂ² chiedere informazioni sugli orari degli sportelli, sui documenti necessari per una pratica e sulle modalitÃÂ  di prenotazione.",
+      "Il cittadino può chiedere informazioni sugli orari degli sportelli, sui documenti necessari per una pratica e sulle modalità di prenotazione.",
       "Il chatbot non decide nulla sulle richieste dei cittadini. Fornisce soltanto informazioni.",
     ],
     correctCategory: "blu",
@@ -62,9 +61,9 @@ const CASES = [
     ],
     correctQuestion: 1,
     spiegazione:
-      "Il chatbot non decide se il cittadino abbia diritto a un servizio. Tuttavia, quando un sistema di IA interagisce direttamente con una persona, bisogna verificare gli obblighi di informazione previsti dall'AI Act, salvo che l'interazione con l'IA sia giÃÂ  evidente.",
+      "Il chatbot non decide se il cittadino abbia diritto a un servizio. Tuttavia, quando un sistema di IA interagisce direttamente con una persona, bisogna verificare gli obblighi di informazione previsti dall'AI Act, salvo che l'interazione con l'IA sia già evidente.",
     verifica:
-      "Mostrare all'inizio della conversazione un avviso chiaro, ad esempio: ÃÂ«Stai interagendo con un assistente virtuale basato su intelligenza artificialeÃÂ».",
+      "Mostrare all'inizio della conversazione un avviso chiaro, ad esempio: «Stai interagendo con un assistente virtuale basato su intelligenza artificiale».",
     riferimento: "AI Act, articolo 50, paragrafo 1.",
     referenti: "RTD/referente IA, ICT e responsabile del servizio digitale.",
     messaggio: "L'IA informa, non valuta il cittadino.",
@@ -76,19 +75,19 @@ const CASES = [
     scenario: [
       "Ogni giorno il Comune riceve numerose richieste tramite il portale.",
       "Un sistema di IA legge l'oggetto delle domande, individua la tipologia e le inoltra all'ufficio competente.",
-      "Non assegna prioritÃÂ , non valuta le persone e non determina l'esito delle pratiche.",
+      "Non assegna priorità, non valuta le persone e non determina l'esito delle pratiche.",
     ],
     correctCategory: "verde",
     questions: [
-      "Il sistema si limita a smistare le pratiche oppure ne modifica prioritÃÂ  ed esiti?",
+      "Il sistema si limita a smistare le pratiche oppure ne modifica priorità ed esiti?",
       "Il Comune dispone di un sito moderno?",
       "Il sistema sa anche tradurre i documenti?",
     ],
     correctQuestion: 0,
     spiegazione:
-      "In questo scenario il sistema svolge un'attivitÃÂ  organizzativa di smistamento. Sulla base delle informazioni fornite, non emerge una funzione di valutazione dei diritti delle persone riconducibile ai casi di alto rischio descritti. Restano comunque da verificare protezione dei dati, sicurezza, correttezza dello smistamento e regole interne dell'ente.",
+      "In questo scenario il sistema svolge un'attività organizzativa di smistamento. Sulla base delle informazioni fornite, non emerge una funzione di valutazione dei diritti delle persone riconducibile ai casi di alto rischio descritti. Restano comunque da verificare protezione dei dati, sicurezza, correttezza dello smistamento e regole interne dell'ente.",
     verifica:
-      "Accertarsi che il sistema si limiti a smistare le pratiche per tipologia, senza modificare prioritÃÂ  ed esiti, e restano da verificare protezione dei dati, sicurezza e regole interne dell'ente.",
+      "Accertarsi che il sistema si limiti a smistare le pratiche per tipologia, senza modificare priorità ed esiti, e restano da verificare protezione dei dati, sicurezza e regole interne dell'ente.",
     riferimento: "AI Act, articolo 6 e Allegato III, da valutare rispetto alla funzione effettiva.",
     referenti: "RTD/referente IA, ICT e responsabile del procedimento interessato.",
     messaggio: "Organizzare documenti non equivale a valutare persone.",
@@ -104,8 +103,8 @@ const CASES = [
     ],
     correctCategory: "arancione",
     questions: [
-      "Il gestionale ÃÂ¨ disponibile anche nel fine settimana?",
-      "Il fornitore possiede un marchio di qualitÃÂ ?",
+      "Il gestionale è disponibile anche nel fine settimana?",
+      "Il fornitore possiede un marchio di qualità?",
       "Il punteggio influenza la valutazione del diritto al contributo?",
     ],
     correctQuestion: 2,
@@ -115,7 +114,7 @@ const CASES = [
       "Chiarire se e come il punteggio influenza la valutazione del diritto al contributo e avviare una formale valutazione di classificazione del rischio prima dell'utilizzo.",
     riferimento: "AI Act, articolo 6 e Allegato III, punto 5(a).",
     referenti: "Responsabile dei servizi sociali, RTD, DPO, ufficio legale e ICT.",
-    messaggio: "Quando l'IA influenza l'accesso a un diritto, la verifica diventa molto piÃÂ¹ importante.",
+    messaggio: "Quando l'IA influenza l'accesso a un diritto, la verifica diventa molto più importante.",
   },
   {
     id: 4,
@@ -124,28 +123,28 @@ const CASES = [
     twist: true,
     confronto: {
       prima: { testo: "Smista per tipologia", esito: "uso ordinario", colore: GREEN },
-      dopo: { testo: "Attribuisce prioritÃÂ  ai beneficiari", esito: "possibile alto rischio", colore: ORANGE },
+      dopo: { testo: "Attribuisce priorità ai beneficiari", esito: "possibile alto rischio", colore: ORANGE },
     },
     scenario: [
       "Ricordi il sistema che smistava le pratiche? Il fornitore propone una nuova versione.",
       "Ora il software analizza i dati economici e familiari dei richiedenti un sostegno pubblico essenziale.",
       "Sulla base di questi dati assegna un punteggio di urgenza e determina l'ordine di esame delle domande.",
-      "Nei periodi di molte richieste, le domande con punteggio basso attendono piÃÂ¹ a lungo e questo puÃÂ² ritardare concretamente l'accesso al beneficio.",
+      "Nei periodi di molte richieste, le domande con punteggio basso attendono più a lungo e questo può ritardare concretamente l'accesso al beneficio.",
     ],
     correctCategory: "arancione",
     questions: [
       "Tutti i documenti sono in PDF?",
-      "La prioritÃÂ  attribuita dall'IA influisce concretamente sui tempi di accesso alla prestazione?",
-      "Il software ÃÂ¨ facile da installare?",
+      "La priorità attribuita dall'IA influisce concretamente sui tempi di accesso alla prestazione?",
+      "Il software è facile da installare?",
     ],
     correctQuestion: 1,
     spiegazione:
-      "La tecnologia puÃÂ² essere simile a quella del caso 2, ma adesso il sistema non si limita a smistare pratiche. Valuta caratteristiche delle persone e attribuisce prioritÃÂ  che possono influenzare l'accesso effettivo a una prestazione essenziale. Il sistema richiede quindi un'attenta verifica della possibile classificazione ad alto rischio. Un'attivitÃÂ  descritta come organizzativa o preparatoria non ÃÂ¨ automaticamente esclusa dalla categoria dell'alto rischio.",
+      "La tecnologia può essere simile a quella del caso 2, ma adesso il sistema non si limita a smistare pratiche. Valuta caratteristiche delle persone e attribuisce priorità che possono influenzare l'accesso effettivo a una prestazione essenziale. Il sistema richiede quindi un'attenta verifica della possibile classificazione ad alto rischio. Un'attività descritta come organizzativa o preparatoria non è automaticamente esclusa dalla categoria dell'alto rischio.",
     verifica:
-      "Verificare se la prioritÃÂ  attribuita dall'IA influisce concretamente sui tempi di accesso alla prestazione e avviare la valutazione di classificazione del rischio.",
+      "Verificare se la priorità attribuita dall'IA influisce concretamente sui tempi di accesso alla prestazione e avviare la valutazione di classificazione del rischio.",
     riferimento: "AI Act, articolo 6, paragrafo 3, e Allegato III, punto 5(a).",
     referenti: "Responsabile del servizio, RTD, DPO, ufficio legale e ICT.",
-    messaggio: "NON ÃÂ CAMBIATO IL NOME DEL SOFTWARE. ÃÂ CAMBIATO CIÃÂ CHE IL SOFTWARE DECIDE O INFLUENZA.",
+    messaggio: "NON È CAMBIATO IL NOME DEL SOFTWARE. È CAMBIATO CIÒ CHE IL SOFTWARE DECIDE O INFLUENZA.",
     messaggioEvidenza: true,
   },
   {
@@ -153,24 +152,24 @@ const CASES = [
     icona: "search",
     title: "IL FORNITORE MISTERIOSO",
     scenario: [
-      "Una societÃÂ  propone al Comune una piattaforma chiamata SmartComune AI.",
-      "Nella brochure si legge: ÃÂ«Grazie all'intelligenza artificiale, il sistema velocizza la gestione delle richieste di contributo e migliora l'efficienza degli ufficiÃÂ».",
-      "Il fornitore non spiega se il sistema smista documenti, assegna prioritÃÂ  oppure valuta l'ammissibilitÃÂ  delle persone.",
+      "Una società propone al Comune una piattaforma chiamata SmartComune AI.",
+      "Nella brochure si legge: «Grazie all'intelligenza artificiale, il sistema velocizza la gestione delle richieste di contributo e migliora l'efficienza degli uffici».",
+      "Il fornitore non spiega se il sistema smista documenti, assegna priorità oppure valuta l'ammissibilità delle persone.",
     ],
     correctCategory: "grigio",
     questions: [
-      "In quale cittÃÂ  si trova la sede del fornitore?",
-      "Il programma dispone di una modalitÃÂ  scura?",
+      "In quale città si trova la sede del fornitore?",
+      "Il programma dispone di una modalità scura?",
       "Quali operazioni svolge concretamente l'IA e quali decisioni influenza?",
     ],
     correctQuestion: 2,
     spiegazione:
-      "Non ci sono informazioni sufficienti per classificare il sistema. Potrebbe essere uno strumento di organizzazione documentale oppure un sistema destinato a valutare persone e diritti. Prima di procedere occorre chiedere al fornitore una descrizione precisa delle funzioni, degli output e del loro utilizzo nel procedimento. In questi casi chiedere chiarimenti ÃÂ¨ la risposta piÃÂ¹ corretta.",
+      "Non ci sono informazioni sufficienti per classificare il sistema. Potrebbe essere uno strumento di organizzazione documentale oppure un sistema destinato a valutare persone e diritti. Prima di procedere occorre chiedere al fornitore una descrizione precisa delle funzioni, degli output e del loro utilizzo nel procedimento. In questi casi chiedere chiarimenti è la risposta più corretta.",
     verifica:
-      "Chiedere al fornitore una descrizione precisa di quali operazioni svolge concretamente l'IA, quali output produce e quali decisioni puÃÂ² influenzare nel procedimento.",
+      "Chiedere al fornitore una descrizione precisa di quali operazioni svolge concretamente l'IA, quali output produce e quali decisioni può influenzare nel procedimento.",
     riferimento: "AI Act, articolo 6 e Allegato III.",
     referenti: "RTD, responsabile del procedimento, ICT, ufficio acquisti e, secondo i dati e la funzione, DPO e ufficio legale.",
-    messaggio: "Non sempre la risposta giusta ÃÂ¨ un colore. A volte ÃÂ¨ una domanda.",
+    messaggio: "Non sempre la risposta giusta è un colore. A volte è una domanda.",
   },
 ];
 
@@ -423,7 +422,7 @@ function PhaseB({ c, onConfirm }) {
       <ScenarioCard c={c} />
       <div className="bg-white rounded-2xl shadow-md border border-slate-200 p-5 sm:p-8 anim-fade-up">
         <h3 className="text-2xl sm:text-3xl font-extrabold text-[#142445] mb-4">Che cosa controlleresti prima di procedere?</h3>
-        <p className="text-slate-600 mb-4 text-lg">Scegli la domanda piÃÂ¹ rilevante per questo caso.</p>
+        <p className="text-slate-600 mb-4 text-lg">Scegli la domanda più rilevante per questo caso.</p>
         <div className="grid gap-3">
           {c.questions.map((q, i) => (
             <button
@@ -448,11 +447,11 @@ function PhaseB({ c, onConfirm }) {
             rows={2}
             value={who}
             onChange={(e) => setWho(e.target.value)}
-            placeholder="Es. ICT, ufficio legale, responsabile del procedimentoÃ¢ÂÂ¦"
+            placeholder="Es. ICT, ufficio legale, responsabile del procedimento…"
             className="w-full rounded-xl border-2 border-slate-200 focus:border-[#2563EB] p-3 text-lg text-[#142445] bg-white"
           />
           <p className="text-right text-sm text-slate-500 mt-1" aria-live="polite">{who.length}/160</p>
-          <p className="text-sm text-slate-500">ÃÂ una riflessione di gruppo: non viene valutata automaticamente.</p>
+          <p className="text-sm text-slate-500">È una riflessione di gruppo: non viene valutata automaticamente.</p>
         </div>
 
         <button
@@ -482,7 +481,7 @@ function ComparisonBlock({ confronto, animate }) {
     <div className="flex flex-col sm:flex-row items-stretch gap-4">
       <Row label="PRIMA" item={confronto.prima} coloreTesto={GREEN} />
       <div className="flex sm:flex-col items-center justify-center">
-        <span className="text-3xl font-extrabold text-[#E99A28] anim-pulse-soft" aria-hidden="true">Ã¢ÂÂ</span>
+        <span className="text-3xl font-extrabold text-[#E99A28] anim-pulse-soft" aria-hidden="true">→</span>
       </div>
       <Row label="DOPO" item={confronto.dopo} delay="0.35s" coloreTesto={ORANGE} />
     </div>
@@ -525,7 +524,7 @@ function FeedbackCard({ c, answer, showAnswer }) {
   let nota;
   if (showAnswer) {
     if (answer.catOk && answer.qOk) nota = "Ottimo: hai individuato la funzione del sistema e la verifica chiave.";
-    else if (answer.catOk) nota = "Hai individuato la categoria giusta. Attenzione: la domanda decisiva ÃÂ¨ un elemento che potresti non aver considerato.";
+    else if (answer.catOk) nota = "Hai individuato la categoria giusta. Attenzione: la domanda decisiva è un elemento che potresti non aver considerato.";
     else if (answer.qOk) nota = "Ottima la domanda decisiva. Attenzione: in questo caso conta un elemento che potresti non aver considerato.";
     else nota = "Attenzione: in questo caso conta un elemento che potresti non aver considerato.";
   }
@@ -562,10 +561,10 @@ function FeedbackCard({ c, answer, showAnswer }) {
           </div>
           <div>
             <p className="text-sm font-bold tracking-wider text-slate-500 mb-1">LA DOMANDA DECISIVA</p>
-            <p className="text-xl font-semibold text-[#142445]">ÃÂ«{c.questions[c.correctQuestion]}ÃÂ»</p>
+            <p className="text-xl font-semibold text-[#142445]">«{c.questions[c.correctQuestion]}»</p>
           </div>
           <div>
-            <p className="text-sm font-bold tracking-wider text-slate-500 mb-1">PERCHÃÂ</p>
+            <p className="text-sm font-bold tracking-wider text-slate-500 mb-1">PERCHÉ</p>
             <p className="text-lg text-slate-700 leading-relaxed">{c.spiegazione}</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -693,12 +692,12 @@ function SummaryScreen({ teamName, answers, score, onReview, onDownload, onResta
                   <CaseIcon id={c.id} size={26} />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-extrabold text-[#142445] text-lg">CASO {c.id} Ã¢ÂÂ {c.title}</h3>
+                  <h3 className="font-extrabold text-[#142445] text-lg">CASO {c.id} — {c.title}</h3>
                   <div className="mt-2 grid gap-1.5 text-base">
                     <p className="text-slate-600">
                       <span className="font-semibold">Categoria individuata: </span>
                       <span className="font-bold" style={{ color: scelta.colore }}>{scelta.breve}</span>
-                      <span className="ml-2 font-semibold" style={{ color: a.catOk ? GREEN : RED }} aria-label={a.catOk ? "corretta" : "errata"}>{a.catOk ? "Ã¢ÂÂ" : "Ã¢ÂÂ"}</span>
+                      <span className="ml-2 font-semibold" style={{ color: a.catOk ? GREEN : RED }} aria-label={a.catOk ? "corretta" : "errata"}>{a.catOk ? "✓" : "✗"}</span>
                     </p>
                     <p className="text-slate-600">
                       <span className="font-semibold">Categoria attesa: </span>
@@ -722,8 +721,8 @@ function SummaryScreen({ teamName, answers, score, onReview, onDownload, onResta
         <p className="mt-3 text-lg font-semibold text-white/90">CHIEDITI:</p>
         <ol className="mt-2 space-y-1 text-lg text-left inline-block">
           <li>1. Che cosa fa davvero?</li>
-          <li>2. Quali persone o diritti puÃÂ² influenzare?</li>
-          <li>3. Quali verifiche e responsabilitÃÂ  sono necessarie?</li>
+          <li>2. Quali persone o diritti può influenzare?</li>
+          <li>3. Quali verifiche e responsabilità sono necessarie?</li>
         </ol>
       </div>
 
@@ -748,7 +747,7 @@ function ReviewScreen({ answers, onBack }) {
         <div key={c.id} className="space-y-1">
           <h2 className="text-xl font-extrabold text-[#142445] flex items-center gap-2">
             <span className="w-9 h-9 rounded-lg bg-[#F3F6FB] flex items-center justify-center"><CaseIcon id={c.id} size={22} /></span>
-            CASO {c.id} Ã¢ÂÂ {c.title}
+            CASO {c.id} — {c.title}
           </h2>
           <FeedbackCard c={c} answer={answers[i]} showAnswer />
         </div>
@@ -767,15 +766,15 @@ function SourcesScreen({ onBack }) {
         <p className="font-semibold text-[#142445]">Regolamento (UE) 2024/1689 (AI Act), testo consolidato aggiornato al 27 luglio 2026.</p>
         <ul className="space-y-4">
           <li>
-            <p className="font-bold text-[#142445]">Articolo 6 Ã¢ÂÂ Classificazione dei sistemi ad alto rischio.</p>
+            <p className="font-bold text-[#142445]">Articolo 6 — Classificazione dei sistemi ad alto rischio.</p>
             <a href="https://ai-act-service-desk.ec.europa.eu/it/ai-act/article-6" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] underline break-all">ai-act-service-desk.ec.europa.eu/it/ai-act/article-6</a>
           </li>
           <li>
-            <p className="font-bold text-[#142445]">Allegato III, punto 5(a) Ã¢ÂÂ Sistemi relativi alla valutazione dell'accesso a prestazioni e servizi pubblici essenziali.</p>
+            <p className="font-bold text-[#142445]">Allegato III, punto 5(a) — Sistemi relativi alla valutazione dell'accesso a prestazioni e servizi pubblici essenziali.</p>
             <a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] underline break-all">ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3</a>
           </li>
           <li>
-            <p className="font-bold text-[#142445]">Articolo 50 Ã¢ÂÂ Obblighi di trasparenza per determinati sistemi di IA.</p>
+            <p className="font-bold text-[#142445]">Articolo 50 — Obblighi di trasparenza per determinati sistemi di IA.</p>
             <a href="https://ai-act-service-desk.ec.europa.eu/it/ai-act/article-50" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] underline break-all">ai-act-service-desk.ec.europa.eu/it/ai-act/article-50</a>
           </li>
         </ul>
@@ -785,11 +784,11 @@ function SourcesScreen({ onBack }) {
         <ul className="list-disc pl-5 space-y-1.5">
           <li>Le categorie usate nella simulazione sono etichette didattiche operative e non sostituiscono la classificazione giuridica completa.</li>
           <li>La presenza di una decisione umana non esclude automaticamente la classificazione ad alto rischio di un sistema.</li>
-          <li>Non ogni software utilizzato dalla Pubblica Amministrazione ÃÂ¨ automaticamente ad alto rischio: conta la funzione concreta del sistema nel procedimento.</li>
+          <li>Non ogni software utilizzato dalla Pubblica Amministrazione è automaticamente ad alto rischio: conta la funzione concreta del sistema nel procedimento.</li>
           <li>Gli obblighi di protezione dei dati personali restano applicabili e vanno valutati separatamente: non ogni trattamento imponga automaticamente una DPIA.</li>
         </ul>
       </div>
-      <p className="text-sm text-slate-500">Simulazione didattica. Le risposte non costituiscono una classificazione giuridica definitiva. L'applicazione dell'AI Act richiede una valutazione del sistema, delle sue finalitÃÂ  e del contesto d'uso. Restano applicabili le altre norme pertinenti.</p>
+      <p className="text-sm text-slate-500">Simulazione didattica. Le risposte non costituiscono una classificazione giuridica definitiva. L'applicazione dell'AI Act richiede una valutazione del sistema, delle sue finalità e del contesto d'uso. Restano applicabili le altre norme pertinenti.</p>
       <button onClick={onBack} className="px-6 py-3 rounded-xl bg-[#142445] text-white font-bold hover:bg-[#1d3560] transition-colors">TORNA ALLA SCHERMATA INIZIALE</button>
     </section>
   );
@@ -802,7 +801,7 @@ function HelpOverlay({ onClose }) {
       <div className="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl anim-fade-up max-h-[90vh] overflow-y-auto">
         <div className="flex items-start justify-between gap-4">
           <h2 className="text-2xl font-extrabold text-[#142445]">Come si gioca?</h2>
-          <button onClick={onClose} aria-label="Chiudi la finestra" className="w-10 h-10 rounded-full hover:bg-[#F3F6FB] text-[#142445] text-2xl font-bold shrink-0">ÃÂ</button>
+          <button onClick={onClose} aria-label="Chiudi la finestra" className="w-10 h-10 rounded-full hover:bg-[#F3F6FB] text-[#142445] text-2xl font-bold shrink-0">×</button>
         </div>
         <ol className="mt-4 space-y-3 text-lg text-slate-700 list-decimal pl-5">
           <li>Leggi lo scenario del Comune di Borgonuovo.</li>
@@ -810,7 +809,7 @@ function HelpOverlay({ onClose }) {
           <li>Individua la domanda decisiva da fare prima di procedere.</li>
           <li>Leggi il feedback, i punti e il riferimento normativo, poi passa al caso successivo.</li>
         </ol>
-        <p className="mt-4 text-slate-600">5 casi ÃÂ· circa 12 minuti ÃÂ· punteggio massimo 10 punti. Non serve essere giuristi: serve imparare a fare le domande giuste.</p>
+        <p className="mt-4 text-slate-600">5 casi · circa 12 minuti · punteggio massimo 10 punti. Non serve essere giuristi: serve imparare a fare le domande giuste.</p>
         <p className="mt-2 text-sm text-slate-500">Le categorie sono etichette didattiche operative e non sostituiscono la classificazione giuridica completa. Nessun account, nessuna raccolta di dati personali.</p>
         <button onClick={onClose} className="mt-6 w-full px-6 py-3 rounded-xl bg-[#2563EB] text-white text-lg font-bold hover:bg-[#1e5cd0] transition-colors">HO CAPITO</button>
       </div>
@@ -827,7 +826,7 @@ function HomeScreen({ onStart, onSources, trainerMode, setTrainerMode, onOpenTra
       <header className="text-center anim-fade-up">
         <span className="inline-block text-sm font-bold tracking-widest text-[#2563EB] bg-[#F3F6FB] px-4 py-1.5 rounded-full">LABORATORIO AI ACT NELLA PUBBLICA AMMINISTRAZIONE</span>
         <h1 className="mt-4 text-4xl sm:text-6xl font-black text-[#142445] leading-tight">UN PORTALE, MOLTE DECISIONI</h1>
-        <p className="mt-3 text-lg sm:text-2xl text-slate-600 max-w-2xl mx-auto font-medium">La stessa IA puÃÂ² informare, organizzare o influenzare i diritti. Sai riconoscere la differenza?</p>
+        <p className="mt-3 text-lg sm:text-2xl text-slate-600 max-w-2xl mx-auto font-medium">La stessa IA può informare, organizzare o influenzare i diritti. Sai riconoscere la differenza?</p>
       </header>
 
       <div className="anim-fade-up" style={{ animationDelay: "0.1s" }}>
@@ -835,7 +834,7 @@ function HomeScreen({ onStart, onSources, trainerMode, setTrainerMode, onOpenTra
       </div>
 
       <div className="bg-white rounded-2xl shadow-md border border-slate-200 p-6 sm:p-8 anim-fade-up" style={{ animationDelay: "0.15s" }}>
-        <p className="text-lg sm:text-xl text-slate-700 leading-relaxed">Il Comune di Borgonuovo vuole introdurre nuove funzionalitÃÂ  di intelligenza artificiale.</p>
+        <p className="text-lg sm:text-xl text-slate-700 leading-relaxed">Il Comune di Borgonuovo vuole introdurre nuove funzionalità di intelligenza artificiale.</p>
         <p className="text-lg sm:text-xl text-slate-700 leading-relaxed mt-2">Tu fai parte del gruppo incaricato di esaminarle.</p>
         <p className="text-lg sm:text-xl text-slate-700 leading-relaxed mt-3 font-semibold">Per ogni proposta dovrai capire:</p>
         <ul className="mt-2 space-y-1.5 text-lg text-slate-700 list-disc pl-6">
@@ -856,7 +855,7 @@ function HomeScreen({ onStart, onSources, trainerMode, setTrainerMode, onOpenTra
           placeholder="Es. Ufficio Protocollo"
           className="w-full rounded-xl border-2 border-slate-200 focus:border-[#2563EB] p-4 text-lg bg-white text-[#142445]"
         />
-        <p className="mt-1 text-sm text-slate-500">Se lasci vuoto, verrÃÂ  usato ÃÂ«Squadra del ComuneÃÂ».</p>
+        <p className="mt-1 text-sm text-slate-500">Se lasci vuoto, verrà usato «Squadra del Comune».</p>
       </div>
 
       <div className="anim-fade-up space-y-4" style={{ animationDelay: "0.25s" }}>
@@ -866,14 +865,14 @@ function HomeScreen({ onStart, onSources, trainerMode, setTrainerMode, onOpenTra
         >
           INIZIA LA SIMULAZIONE
         </button>
-        <p className="text-center font-semibold text-slate-600">5 casi ÃÂ· circa 12 minuti</p>
+        <p className="text-center font-semibold text-slate-600">5 casi · circa 12 minuti</p>
         <div className="flex justify-center">
           <button onClick={() => setShowHelp(true)} className="px-6 py-3 rounded-xl border-2 border-[#142445] text-[#142445] text-lg font-bold hover:bg-[#F3F6FB] transition-colors">Come si gioca?</button>
         </div>
       </div>
 
       <div className="flex items-center justify-center gap-3 pt-2 border-t border-slate-200">
-        <label htmlFor="trainer-toggle" className="text-sm text-slate-500">ModalitÃÂ  formatore (per chi tiene il corso)</label>
+        <label htmlFor="trainer-toggle" className="text-sm text-slate-500">Modalità formatore (per chi tiene il corso)</label>
         <input
           id="trainer-toggle"
           type="checkbox"
@@ -884,7 +883,7 @@ function HomeScreen({ onStart, onSources, trainerMode, setTrainerMode, onOpenTra
       </div>
       {trainerMode && (
         <div className="text-center anim-fade">
-          <button onClick={onOpenTrainer} className="px-6 py-3 rounded-xl bg-[#142445] text-white font-bold hover:bg-[#1d3560] transition-colors">APRI LA MODALITÃÂ FORMATORE</button>
+          <button onClick={onOpenTrainer} className="px-6 py-3 rounded-xl bg-[#142445] text-white font-bold hover:bg-[#1d3560] transition-colors">APRI LA MODALITÀ FORMATORE</button>
         </div>
       )}
 
@@ -898,7 +897,7 @@ function HomeScreen({ onStart, onSources, trainerMode, setTrainerMode, onOpenTra
   );
 }
 
-// ---------------- ModalitÃÂ  formatore ----------------
+// ---------------- Modalità formatore ----------------
 function formatTime(sec) {
   const m = Math.floor(sec / 60);
   const s = sec % 60;
@@ -914,7 +913,7 @@ function SolutionPanel({ c }) {
         <CategoryIcon id={attesa.id} size={20} />
         {attesa.nome}
       </p>
-      <p className="text-lg text-slate-700"><span className="font-semibold text-[#142445]">Domanda decisiva: </span>ÃÂ«{c.questions[c.correctQuestion]}ÃÂ»</p>
+      <p className="text-lg text-slate-700"><span className="font-semibold text-[#142445]">Domanda decisiva: </span>«{c.questions[c.correctQuestion]}»</p>
       <p className="text-lg text-slate-700 leading-relaxed"><span className="font-semibold text-[#142445]">Spiegazione: </span>{c.spiegazione}</p>
       <p className="text-lg text-slate-700"><span className="font-semibold text-[#142445]">La verifica da fare: </span>{c.verifica}</p>
       <p className="text-lg text-slate-700"><span className="font-semibold text-[#142445]">Riferimento normativo: </span>{c.riferimento}</p>
@@ -928,8 +927,8 @@ function SolutionPanel({ c }) {
 }
 
 const DISCUSSION_STEPS = [
-  { n: 1, titolo: "Il formatore presenta il caso", testo: "Proietta lo scenario e leggi ad alta voce la domanda: ÃÂ«Quale valutazione preliminare daresti?ÃÂ»" },
-  { n: 2, titolo: "I gruppi discutono", testo: "Lascia 2Ã¢ÂÂ3 minuti di discussione. Ogni gruppo sceglie una delle cinque categorie. Il timer da 12 minuti puÃÂ² aiutare a gestire i tempi." },
+  { n: 1, titolo: "Il formatore presenta il caso", testo: "Proietta lo scenario e leggi ad alta voce la domanda: «Quale valutazione preliminare daresti?»" },
+  { n: 2, titolo: "I gruppi discutono", testo: "Lascia 2–3 minuti di discussione. Ogni gruppo sceglie una delle cinque categorie. Il timer da 12 minuti può aiutare a gestire i tempi." },
   { n: 3, titolo: "Il formatore chiede la categoria scelta", testo: "Raccogli a mano alzata la categoria scelta da ciascun gruppo, senza svelare la soluzione." },
   { n: 4, titolo: "Viene mostrata la soluzione", testo: "Rivela la categoria attesa, la domanda decisiva e la spiegazione normativa." },
   { n: 5, titolo: "Il formatore commenta e procede", testo: "Commenta le scelte dei gruppi, evidenzia la domanda decisiva e passa al caso successivo." },
@@ -975,7 +974,7 @@ function TrainerScreen({ onExit }) {
     <div className="min-h-screen">
       <header className="bg-[#142445] text-white sticky top-0 z-20 shadow-lg">
         <div className="max-w-5xl mx-auto px-4 py-3 flex flex-wrap items-center gap-x-5 gap-y-3">
-          <span className="font-black tracking-wide bg-[#E99A28] text-[#142445] px-3 py-1 rounded-lg text-sm">MODALITÃÂ FORMATORE</span>
+          <span className="font-black tracking-wide bg-[#E99A28] text-[#142445] px-3 py-1 rounded-lg text-sm">MODALITÀ FORMATORE</span>
           <div className="flex items-center gap-2" aria-label={"Timer: " + formatTime(sec)}>
             <span className="font-mono text-2xl font-bold" style={{ color: timerColor }}>{formatTime(sec)}</span>
             <button onClick={() => setRunning(!running)} className="px-4 py-2 rounded-lg bg-[#2563EB] hover:bg-[#1e5cd0] font-bold text-sm transition-colors">{running ? "PAUSA" : "AVVIA"}</button>
@@ -989,9 +988,9 @@ function TrainerScreen({ onExit }) {
 
       <section className="max-w-5xl mx-auto px-4 py-6 space-y-6">
         <div className="flex items-center justify-between gap-3 flex-wrap">
-          <button onClick={() => goCase(-1)} disabled={ci === 0} className="px-5 py-3 rounded-xl border-2 border-slate-200 bg-white font-bold text-[#142445] hover:border-[#2563EB] disabled:opacity-40 disabled:cursor-not-allowed transition-colors">Ã¢ÂÂ CASO PRECEDENTE</button>
+          <button onClick={() => goCase(-1)} disabled={ci === 0} className="px-5 py-3 rounded-xl border-2 border-slate-200 bg-white font-bold text-[#142445] hover:border-[#2563EB] disabled:opacity-40 disabled:cursor-not-allowed transition-colors">← CASO PRECEDENTE</button>
           <p className="font-bold text-slate-600">CASO {c.id} DI {CASES.length}</p>
-          <button onClick={() => goCase(1)} disabled={ci === CASES.length - 1} className="px-5 py-3 rounded-xl border-2 border-slate-200 bg-white font-bold text-[#142445] hover:border-[#2563EB] disabled:opacity-40 disabled:cursor-not-allowed transition-colors">CASO SUCCESSIVO Ã¢ÂÂ</button>
+          <button onClick={() => goCase(1)} disabled={ci === CASES.length - 1} className="px-5 py-3 rounded-xl border-2 border-slate-200 bg-white font-bold text-[#142445] hover:border-[#2563EB] disabled:opacity-40 disabled:cursor-not-allowed transition-colors">CASO SUCCESSIVO →</button>
         </div>
 
         <ScenarioCard c={c} />
@@ -1045,7 +1044,7 @@ function TrainerScreen({ onExit }) {
           </div>
         )}
 
-        <p className="text-sm text-slate-500">In questa modalitÃÂ  non ÃÂ¨ previsto il punteggio. Le scelte raccolte dai gruppi restano nelle loro schede locali: non esistono votazioni in tempo reale condivise.</p>
+        <p className="text-sm text-slate-500">In questa modalità non è previsto il punteggio. Le scelte raccolte dai gruppi restano nelle loro schede locali: non esistono votazioni in tempo reale condivise.</p>
       </section>
     </div>
   );
@@ -1054,7 +1053,7 @@ function TrainerScreen({ onExit }) {
 // ---------------- Download del riepilogo (file di testo) ----------------
 function downloadSummary(teamName, answers, score) {
   const lines = [];
-  lines.push("UN PORTALE, MOLTE DECISIONI Ã¢ÂÂ Laboratorio AI Act nella Pubblica Amministrazione");
+  lines.push("UN PORTALE, MOLTE DECISIONI — Laboratorio AI Act nella Pubblica Amministrazione");
   lines.push("Riepilogo della simulazione");
   lines.push("");
   lines.push("Squadra: " + teamName);
@@ -1062,7 +1061,7 @@ function downloadSummary(teamName, answers, score) {
   lines.push("");
   CASES.forEach((c, i) => {
     const a = answers[i];
-    lines.push("CASO " + c.id + " Ã¢ÂÂ " + c.title);
+    lines.push("CASO " + c.id + " — " + c.title);
     lines.push("  Categoria individuata: " + catById(a.catId).nome);
     lines.push("  Categoria attesa: " + catById(c.correctCategory).nome + (a.catOk ? "" : " (non corrisponde)"));
     lines.push("  Domanda decisiva: " + (a.qOk ? "corretta" : "non individuata"));
@@ -1074,8 +1073,8 @@ function downloadSummary(teamName, answers, score) {
   });
   lines.push("Le tre domande da portare a casa:");
   lines.push("  1. Che cosa fa davvero il sistema?");
-  lines.push("  2. Quali persone o diritti puÃÂ² influenzare?");
-  lines.push("  3. Quali verifiche e responsabilitÃÂ  sono necessarie?");
+  lines.push("  2. Quali persone o diritti può influenzare?");
+  lines.push("  3. Quali verifiche e responsabilità sono necessarie?");
   lines.push("");
   lines.push("Fonti: Regolamento (UE) 2024/1689 (AI Act), articoli 6 e 50, Allegato III punto 5(a).");
   lines.push("https://ai-act-service-desk.ec.europa.eu/it/ai-act/article-6");
